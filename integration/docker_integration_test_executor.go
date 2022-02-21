@@ -90,7 +90,7 @@ func givenThisContainer(t *testing.T, bundle IntegrationTestDockerExecRunnerBund
 
 		err = copyDir(projectDir, tempDir)
 		if err != nil {
-			t.Fatalf("Failed to copy files from %s into %s", projectDir, tempDir)
+			t.Fatalf("Failed to copy files from %s into %s, error: %s", projectDir, tempDir, err.Error())
 		}
 		params = append(params, "-v", fmt.Sprintf("%s:/project", tempDir))
 	}
